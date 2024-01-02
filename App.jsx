@@ -1,14 +1,15 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
-
+import MainStackNavigator from './src/navigation/stack/MainStackNavigator';
+import {NavigationContainer} from '@react-navigation/native';
+import StoreProvider from './src/store/wrapper/StoreProvider';
 const App = () => {
   return (
-    <View className="flex-1 bg-green-700" >
-    <Text className="text-black font-c-thin text-30"  >App</Text>
-  </View>
+    <StoreProvider>
+      <NavigationContainer>
+        <MainStackNavigator />
+      </NavigationContainer>
+    </StoreProvider>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default App;
